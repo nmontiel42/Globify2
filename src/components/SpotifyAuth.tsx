@@ -70,20 +70,19 @@ const SpotifyAuth: React.FC = () => {
   };
 
   if (!token) {
-    return (
-     /* <div>
-        <button onClick={() => window.location.href = AUTH_URL}>Iniciar sesión con Spotify</button>
-      </div>
-    ) */
-   
+    return (   
 		<div className="spotify-auth-container">
-		<div className="spotify-auth-card">
-			<img src={logoSpotify} alt="Spotify Logo" className="spotify-logo"></img>
-			<h1 className="spotify-title">Inicia sesión en Spotify</h1>
-			<button className="spotify-login-button" onClick={() => window.location.href = AUTH_URL}>
-			Iniciar sesión con Spotify
-			</button>
-		</div>
+			<div className="spotify-auth-card">
+				<img src={logoSpotify} alt="Spotify Logo" className="spotify-logo"></img>
+				<h1 className="spotify-title">Inicia sesión en Spotify</h1>
+				<button className="spotify-login-button" onClick={() => window.location.href = AUTH_URL}>
+				Iniciar sesión con Spotify
+				</button>
+			</div>
+
+			<footer className="spotify-footer">
+				Este sitio está protegido por reCAPTCHA. Se aplican los <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Términos del servicio</a> y la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Política de privacidad</a> de Google.
+			</footer>
 		</div>
 	);
   }
