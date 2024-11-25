@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/SpotifyAuth.css';
 import logoSpotify from '../assets/logo.svg';
 
-const CLIENT_ID = '8dd4cfb515cf4929b141f028721625b6'; 
-const REDIRECT_URI = 'http://localhost:3000/callback'; 
-const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
-const RESPONSE_TYPE = 'token';
-const SCOPES = 'user-read-private user-read-email';
+const CLIENT_ID = process.env.REACT_APP_CLIENT_ID; 
+const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI; 
+const AUTH_ENDPOINT = process.env.REACT_APP_AUTH_ENDPOINT;
+const RESPONSE_TYPE = process.env.REACT_APP_RESPONSE_TYPE;
+const SCOPES = process.env.REACT_APP_SCOPES || '';
 
 const AUTH_URL = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(SCOPES)}`;
 
