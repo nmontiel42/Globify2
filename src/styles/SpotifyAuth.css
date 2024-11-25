@@ -1,0 +1,75 @@
+/* SpotifyAuth.css */
+
+/* Estilo general para la página */
+body {
+	margin: 0;
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	background-color: #121212; /* Fondo negro característico de Spotify */
+	color: #fff;
+  }
+  
+  /* Contenedor principal */
+  .spotify-auth-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh; /* Ocupa toda la altura de la pantalla */
+	background: linear-gradient(#383838, #212121, #1a1a1a, #191414); /* Degradado similar a Spotify */
+  }
+  
+  /* Tarjeta de autenticación */
+  .spotify-auth-card {
+	text-align: center;
+	background-color: #000000;
+	padding: 40px;
+	border-radius: 8px;
+	width: 90%;
+	max-width: 400px;
+  }
+  
+  /* Título */
+  .spotify-title {
+	font-size: 24px;
+	margin-bottom: 20px;
+	font-weight: bold;
+	color: #fff;
+  }
+  
+  /* Botón de inicio de sesión */
+  .spotify-login-button {
+	background-color: #1db954; /* Verde de Spotify */
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .spotify-login-button:hover {
+	background-color: #1ed760; /* Verde más claro al pasar el mouse */
+	transform: scale(1.05); /* Ligero aumento */
+  }
+  
+  .spotify-login-button:active {
+	transform: scale(0.95); /* Efecto de "clic" */
+  }
+  
+  /* Mensaje de carga */
+  .spotify-loading {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-size: 20px;
+	font-weight: bold;
+  }
+  
+  /* SpotifyAuth.css */
+	.spotify-logo {
+	width: 50px;
+	margin-bottom: 20px; /* Espaciado entre el logo y el título */
+  }
+  

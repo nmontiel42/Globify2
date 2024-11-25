@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/SpotifyAuth.css';
+import logoSpotify from '../assets/logo.svg';
 
 const CLIENT_ID = '8dd4cfb515cf4929b141f028721625b6'; 
 const REDIRECT_URI = 'http://localhost:3000/callback'; 
@@ -69,14 +71,25 @@ const SpotifyAuth: React.FC = () => {
 
   if (!token) {
     return (
-      <div>
+     /* <div>
         <button onClick={() => window.location.href = AUTH_URL}>Iniciar sesión con Spotify</button>
       </div>
-    );
+    ) */
+   
+		<div className="spotify-auth-container">
+		<div className="spotify-auth-card">
+			<img src={logoSpotify} alt="Spotify Logo" className="spotify-logo"></img>
+			<h1 className="spotify-title">Inicia sesión en Spotify</h1>
+			<button className="spotify-login-button" onClick={() => window.location.href = AUTH_URL}>
+			Iniciar sesión con Spotify
+			</button>
+		</div>
+		</div>
+	);
   }
 
   return (
-        <div>Loading user profile...</div>
+        <div className="spotify-loading">Loading user profile...</div>
   );
 };
 
