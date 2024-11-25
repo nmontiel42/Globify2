@@ -15,14 +15,17 @@ const SpotifyAuth: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Verifica si el token está presente en la URL o en el localStorage
     if (window.location.hash) {
       const tokenFromUrl = window.location.hash.split('&')[0].split('=')[1];
+      console.log('Token desde la URL:', tokenFromUrl); // Depuración
       setToken(tokenFromUrl);
       localStorage.setItem('spotifyToken', tokenFromUrl);
       window.location.hash = '';
     } else {
       const savedToken = localStorage.getItem('spotifyToken');
       if (savedToken) {
+        console.log('Token recuperado desde localStorage:', savedToken); // Depuración
         setToken(savedToken);
       }
     }
@@ -30,6 +33,7 @@ const SpotifyAuth: React.FC = () => {
 
   useEffect(() => {
     if (token) {
+      console.log('Token disponible, obteniendo perfil...');
       fetchUserProfile();
     }
   }, [token]);
@@ -41,10 +45,12 @@ const SpotifyAuth: React.FC = () => {
           Authorization: `Bearer ${token}`,
         },
       });
+
       if (response.ok) {
         const userData = await response.json();
+        console.log('Perfil de usuario obtenido:', userData); // Depuración
         setUserProfile(userData);
-        navigate('/user-profile'); // Redirige al perfil del usuario
+        navigate('/user-profile'); // Redirigir al perfil del usuario
       } else {
         console.error('Error al obtener perfil de usuario', response.status);
       }
@@ -70,18 +76,7 @@ const SpotifyAuth: React.FC = () => {
   }
 
   return (
-    <div>
-      {userProfile && (
-        <div>
-          <h2>Bienvenido, {userProfile.display_name}</h2>
-          <img src={userProfile.images[0]?.url || 'placeholder.jpg'} alt="Profile" width={100} />
-          <p>{userProfile.email}</p>
-        </div>
-      )}
-      <div>
-        <button onClick={handleLogout}>Cerrar sesión</button>
-      </div>
-    </div>
+        <div>Loading user profile...</div>
   );
 };
 
