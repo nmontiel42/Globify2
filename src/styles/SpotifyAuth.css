@@ -77,15 +77,26 @@ body {
   /* SpotifyAuth.css */
 
 /* Footer */
+ 
+footer {
+	display: flex;
+	justify-content: center;
+
+}
+
 .spotify-footer {
 	margin-top: 20px;
 	text-align: center;
 	font-size: 12px;
 	width: 100%;
+	display: flex;
+	justify-content: center;
 	position: absolute;
 	bottom: 0;
-	margin-bottom: 30px;
+	padding: 15px 15px;
 	color: #b3b3b3;
+	height: auto;
+	background-color: #121212;
   }
   
   .spotify-footer a {

@@ -80,8 +80,12 @@ const SpotifyAuth: React.FC = () => {
 				</button>
 			</div>
 
-			<footer className="spotify-footer">
-				Este sitio está protegido por reCAPTCHA. Se aplican los <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Términos del servicio</a> y la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Política de privacidad</a> de Google.
+			<footer>
+				<div className="spotify-footer">
+					<p>
+						Este sitio está protegido por reCAPTCHA. Se aplican los <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Términos del servicio</a> y la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Política de privacidad</a> de Google.
+					</p>
+				</div>
 			</footer>
 		</div>
 	);
