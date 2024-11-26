@@ -5,7 +5,7 @@ import App from './App'; // Asumiendo que tu componente principal es App
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 root.render(
-  <BrowserRouter> {/* Envuelve tu aplicación en BrowserRouter */}
+  <BrowserRouter> 
     <App />
   </BrowserRouter>
 );

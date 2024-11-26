@@ -65,6 +65,11 @@ const UserProfile: React.FC = () => {
       <main>
         <div className="profile-container">
           <h2>Bienvenido/a, {userProfile.display_name}</h2>
+		  <h2>Bienvenido/a, {userProfile.display_name}</h2>
+		  <h2>Bienvenido/a, {userProfile.display_name}</h2>
+		  <h2>Bienvenido/a, {userProfile.display_name}</h2>
+
+		  <h2>Bienvenido/a, {userProfile.display_name}</h2>
         </div>
       </main>
       <footer>

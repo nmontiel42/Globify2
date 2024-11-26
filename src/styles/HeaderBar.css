@@ -127,6 +127,7 @@
   
   /* Sección derecha: Perfil */
   .profile-info {
+	position: relative;
 	display: flex;
 	align-items: center;
   }
@@ -143,6 +144,30 @@
   
   .profile-picture:hover {
 	background-color: #3b3b3b;
+  }
+
+  .profile-details {
+	position: absolute;
+	top: 100%;
+	right: 5px;
+	margin-top: 8px;
+	border-radius: 4px;
+	padding: 1rem;
+	list-style: none;
+	min-width: 200px;
+	background-color: #242424;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+	z-index: 9999;
+  }
+
+  .profile-details li {
+	font-size: 11px;
+  	padding: 8px 0;
+  	border-bottom: 1px solid #3e3e3e;
+  }
+
+  .profile-details li:last-child {
+	border-bottom: none;
   }
   
   .logout-button {
