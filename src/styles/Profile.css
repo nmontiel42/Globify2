@@ -1,15 +1,48 @@
+body {
+	background-color: #121212;
+}
+
+header button {
+	background-color: #121212;
+	border: none;
+}
+
+.header-profile {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.spotify-logo {
+	padding: 10px;
+	width: 30px;
+	margin-bottom: 20px;
+}
+
 .profile-picture {
-    width: 90px;
-    height: 90px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    margin-left: 10px;
     display: block;
     cursor: pointer;
     transition: transform 0.2s ease;
     border: 2px solid transparent;
+	margin-top: 5px;
+	margin-right: 5px;
+	padding: 5px;
 }
 
 .profile-picture:hover {
     transform: scale(1.05);
-    border: 2px solid #1ed760;
+	background-color: #3b3b3b;
+}
+
+.homeButton {
+	background: none;
+	border: none;
+	color: white;
+}
+
+.home-logo {
+	background-color: #3b3b3b;
 }
