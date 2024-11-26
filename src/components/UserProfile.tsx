@@ -49,32 +49,42 @@ const UserProfile: React.FC = () => {
   }
 
   return (
-    <div className="profile-container">
-      <h2>Bienvenido/a, {userProfile.display_name}</h2>
-      <div className="profile-info">
-        <img
-          src={userProfile.images[0]?.url || 'placeholder.jpg'}
-          alt="Foto de perfil"
-          className="profile-picture"
-          onClick={toggleInfoVisibility} // Añadimos el evento onClick
-        />
-        {isInfoVisible && ( // Mostrar información solo si `isInfoVisible` es true
-          <ul className="profile-details">
-            <li><strong>Email:</strong> {userProfile.email || 'No disponible'}</li>
-            <li><strong>País:</strong> {userProfile.country || 'No disponible'}</li>
-            <li><strong>Seguidores:</strong> {userProfile.followers?.total || 0}</li>
-            <li>
-              <strong>Perfil de Spotify:</strong>{' '}
-              <a href={userProfile.external_urls?.spotify} target="_blank" rel="noopener noreferrer">
-                Visitar
-              </a>
-            </li>
-             <button onClick={handleLogout} className="logout-button">Cerrar sesión</button>
-          </ul>
-        )}
-      </div>
-     
-    </div>
+    <body>
+      <header>
+        <h1>Perfil de usuario</h1>
+      </header>
+      <main>
+        <div className="profile-container">
+          <h2>Bienvenido/a, {userProfile.display_name}</h2>
+          <div className="profile-info">
+            <img
+              src={userProfile.images[0]?.url || 'placeholder.jpg'}
+              alt="Foto de perfil"
+              className="profile-picture"
+              onClick={toggleInfoVisibility} // Añadimos el evento onClick
+            />
+            {isInfoVisible && ( // Mostrar información solo si `isInfoVisible` es true
+              <ul className="profile-details">
+                <li><strong>Email:</strong> {userProfile.email || 'No disponible'}</li>
+                <li><strong>País:</strong> {userProfile.country || 'No disponible'}</li>
+                <li><strong>Seguidores:</strong> {userProfile.followers?.total || 0}</li>
+                <li>
+                  <strong>Perfil de Spotify:</strong>{' '}
+                  <a href={userProfile.external_urls?.spotify} target="_blank" rel="noopener noreferrer">
+                    Visitar
+                  </a>
+                </li>
+                <button onClick={handleLogout} className="logout-button">Cerrar sesión</button>
+              </ul>
+            )}
+          </div>
+
+        </div>
+      </main>
+      <footer>
+        <p>Footer</p>
+      </footer>
+    </body>
   );
 };
 
