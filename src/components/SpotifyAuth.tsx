@@ -8,9 +8,10 @@ const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET; // Asegúrate de tene
 const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI; 
 const AUTH_ENDPOINT = process.env.REACT_APP_AUTH_ENDPOINT;
 const RESPONSE_TYPE = process.env.REACT_APP_RESPONSE_TYPE;
-const SCOPES = process.env.REACT_APP_SCOPES || '';
+const SCOPES = 'user-read-private user-read-email user-top-read'; // Incluye 'user-top-read'
 
 const AUTH_URL = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(SCOPES)}`;
+
 
 const SpotifyAuth: React.FC = () => {
   const [token, setToken] = useState<string | null>(null);

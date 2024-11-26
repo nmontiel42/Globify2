@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/Profile.css';
 import logoSpotify from '../assets/logo.svg';
 import SearchBar from './SearchBar';
+import PlayBar from './Playbar';
 
 const UserProfile: React.FC = () => {
   const [userProfile, setUserProfile] = useState<any>(null);
@@ -89,7 +90,9 @@ const UserProfile: React.FC = () => {
 					Visitar
 					</a>
 				</li>
-				<button onClick={handleLogout} className="logout-button">Cerrar sesión</button>
+				<li>
+          <button onClick={handleLogout} className="logout-button">Cerrar sesión</button>
+        </li>
 				</ul>
 			)}
 			</div>
@@ -99,10 +102,11 @@ const UserProfile: React.FC = () => {
       <main>
         <div className="profile-container">
           <h2>Bienvenido/a, {userProfile.display_name}</h2>
+          <button onClick={handleLogout} className="logout-button">Cerrar sesión</button>
         </div>
       </main>
       <footer>
-        <p>Footer</p>
+        <PlayBar />
       </footer>
     </body>
   );
