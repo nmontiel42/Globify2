@@ -10,13 +10,14 @@ header button {
 .header-profile {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 
 .spotify-logo {
 	padding: 10px;
 	width: 30px;
-	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 .profile-picture {
@@ -27,7 +28,6 @@ header button {
     cursor: pointer;
     transition: transform 0.2s ease;
     border: 2px solid transparent;
-	margin-top: 5px;
 	margin-right: 5px;
 	padding: 5px;
 }
@@ -35,6 +35,11 @@ header button {
 .profile-picture:hover {
     transform: scale(1.05);
 	background-color: #3b3b3b;
+}
+
+.btns-home {
+	display: flex;
+
 }
 
 .homeButton {
@@ -45,4 +50,6 @@ header button {
 
 .home-logo {
 	background-color: #3b3b3b;
+	padding: 10px;
+	border-radius: 50%;
 }
