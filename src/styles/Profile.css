@@ -13,3 +13,67 @@
     transform: scale(1.05);
     border: 2px solid #1ed760;
 }
+
+/*------------ FOOTER ------------*/
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .profile-container {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .footer {
+    background-color: #282828;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .playback-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .track-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .album-cover {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .track-name, .artist-name {
+    margin: 0;
+  }
+  
+  .controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .progress-bar {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+  }
+  
+  .progress-bar input[type="range"] {
+    margin: 0 10px;
+    width: 200px;
+  }
+  

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Profile.css';
+import SearchBar from './SearchBar';
 
 const UserProfile: React.FC = () => {
   const [userProfile, setUserProfile] = useState<any>(null);
@@ -52,6 +53,9 @@ const UserProfile: React.FC = () => {
     <body>
       <header>
         <h1>Perfil de usuario</h1>
+        <SearchBar onSongSelect={function (uri: string): void {
+          throw new Error('Function not implemented.');
+        } } />
       </header>
       <main>
         <div className="profile-container">
