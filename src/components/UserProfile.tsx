@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Profile.css';
 import logoSpotify from '../assets/logo.svg';
+import SearchBar from './SearchBar';
 
 const UserProfile: React.FC = () => {
   const [userProfile, setUserProfile] = useState<any>(null);
@@ -63,6 +64,10 @@ const UserProfile: React.FC = () => {
 				</svg>
 			</button>
 
+			<SearchBar onSongSelect={function (uri: string): void {
+				throw new Error('Function not implemented.');
+			} } />
+
 			<div className="profile-info">
 			<img
 				src={userProfile.images[0]?.url || 'placeholder.jpg'}
@@ -87,9 +92,32 @@ const UserProfile: React.FC = () => {
 			</div>
 		</div>
       </header>
+
       <main>
         <div className="profile-container">
           <h2>Bienvenido/a, {userProfile.display_name}</h2>
+          <div className="profile-info">
+            <img
+              src={userProfile.images[0]?.url || 'placeholder.jpg'}
+              alt="Foto de perfil"
+              className="profile-picture"
+              onClick={toggleInfoVisibility} // Añadimos el evento onClick
+            />
+            {isInfoVisible && ( // Mostrar información solo si `isInfoVisible` es true
+              <ul className="profile-details">
+                <li><strong>Email:</strong> {userProfile.email || 'No disponible'}</li>
+                <li><strong>País:</strong> {userProfile.country || 'No disponible'}</li>
+                <li><strong>Seguidores:</strong> {userProfile.followers?.total || 0}</li>
+                <li>
+                  <strong>Perfil de Spotify:</strong>{' '}
+                  <a href={userProfile.external_urls?.spotify} target="_blank" rel="noopener noreferrer">
+                    Visitar
+                  </a>
+                </li>
+                <button onClick={handleLogout} className="logout-button">Cerrar sesión</button>
+              </ul>
+            )}
+          </div>
 
         </div>
       </main>
