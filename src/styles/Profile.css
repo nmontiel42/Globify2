@@ -1,3 +1,18 @@
-body {
-	background-color: #121212;
-}
+body, html {
+	height: 100%;
+	margin: 0;
+	display: flex;
+	flex-direction: column; /* Orden de los elementos: header, main, footer */
+  }
+
+  main {
+	flex-grow: 1; /* Asegura que el contenido principal ocupe el espacio restante */
+	padding: 20px;
+  }
+
+  .footer-index {
+	height: 100px; /* Asegura que el footer tenga un tamaño fijo */
+	width: 100%;
+	position: relative;
+	bottom: 0;
+  }
