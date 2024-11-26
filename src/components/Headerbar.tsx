@@ -55,7 +55,7 @@ const HeaderBar: React.FC<HeaderBarProps> = ({ userProfile, onSongSelect, handle
 			</button>
 
 			<button className="heartButton">
-            <img
+          <img
               src={iconHeart}
               alt="Spotify Logo"
               className="heart-icon"

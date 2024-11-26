@@ -79,6 +79,10 @@
 	width: 20px;
 	padding: 10px;
   }
+
+  .heart-icon:hover {
+	background-color: #4f4f4f;
+  }
   
   /* Barra de búsqueda central */
   .search-bar {
