@@ -15,6 +15,7 @@
 .track-info {
   display: flex;
   align-items: center;
+  /* Para posicionar el botón "like" en relación a este contenedor */
 }
 
 .album-art {
@@ -56,6 +57,7 @@
   color: #b3b3b3;
   cursor: pointer;
   transition: color 0.2s ease;
+  margin-top: 5px;
 }
 
 .control-button:hover {
@@ -65,8 +67,11 @@
 .play-pause {
   background-color: white;
   color: black;
-  border-radius: 50%;
+  border-radius: 100%;
   padding: 8px;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 7px;
 }
 
 .progress-container {
@@ -83,19 +88,50 @@
   border-radius: 50px;
   height: 4px;
   position: relative;
+  height: 5px;
+  cursor: pointer;
 }
 
 .progress {
+  position: absolute;
   background-color: #1db954;
   border-radius: 50px;
   height: 100%;
+}
+
+/* Estilos adicionales para hacer más similar a Spotify */
+.playback-bar .like-button,
+.playback-bar .shuffle-button,
+.playback-bar .repeat-button,
+.playback-bar .lyrics-button,
+.playback-bar .queue-button,
+.playback-bar .devices-button {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.playback-bar .like-button:hover,
+.playback-bar .shuffle-button:hover,
+.playback-bar .repeat-button:hover,
+.playback-bar .lyrics-button:hover,
+.playback-bar .queue-button:hover,
+.playback-bar .devices-button:hover {
+  opacity: 1;
+}
+
+.progress-container .time-elapsed,
+.progress-container .time-total {
+  color: #b3b3b3;
+  font-size: 11px;
+  width: 40px;
+  text-align: center;
 }
 
 .volume-controls {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 16px;
+  gap: 10px;
 }
 
 .volume-bar {
@@ -103,10 +139,34 @@
   height: 4px;
   background-color: #4d4d4d;
   border-radius: 50px;
+  cursor: pointer;
 }
 
 .volume-progress {
   background-color: #b3b3b3;
   border-radius: 50px;
   height: 100%;
+  transition: background-color 0.2s ease;
+}
+.like-button {
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  margin-right: 20px;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.like-button .icon {
+  fill: #ffffff; /* Blanco inicial */
+  transition: fill 0.2s ease;
+}
+
+.like-button.liked .icon {
+  fill: #1db954; /* Verde al dar like */
 }
