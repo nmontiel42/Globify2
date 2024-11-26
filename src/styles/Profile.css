@@ -53,3 +53,11 @@ header button {
 	padding: 10px;
 	border-radius: 50%;
 }
+
+.logout-button {
+	background: white;
+	color: #121212;
+	border: none;
+	border: #121212;
+	border-radius: 10px;
+}
