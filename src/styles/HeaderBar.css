@@ -1,0 +1,153 @@
+/* Contenedor principal */
+
+.header-bar {
+	display: flex;
+	align-items: center;
+	padding: 1rem;
+	background: none;
+  }
+  
+  .header-profile {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+  }
+  
+  /* Sección izquierda: Logo y botón home */
+  .btns-home {
+	display: flex;
+	align-items: center;
+	gap: 0.1rem;
+	background: none;
+  }
+
+  .logoButton {
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+  }
+  
+  .spotify-logo {
+	height: 30px;
+	margin-right: 10px;
+	background: none;
+	margin-top: 20px;
+  }
+
+  .search-section {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	flex: 0.75;
+  }
+  
+  .homeButton {
+	background: none;
+	border: none;
+	color: white;
+	display: flex;
+	align-items: center;
+	padding: 5px;
+	margin-right: 0.5rem;
+  }
+  
+  .home-logo {
+	background-color: #3b3b3b;
+	padding: 10px;
+	border-radius: 50%;
+	transition: background-color 0.2s ease;
+  }
+  
+  .home-logo:hover {
+	background-color: #4f4f4f;
+  }
+
+  .heartButton {
+	background: none;
+	border: none;
+	
+	
+  }
+
+  .heart-icon {
+	background-color: #3b3b3b;
+	border-radius: 50%;
+	height: 20px;
+	width: 20px;
+	padding: 10px;
+  }
+  
+  /* Barra de búsqueda central */
+  .search-bar {
+	flex: 1 1 600px;
+	margin: 0 0.25rem;
+  }
+
+  
+  
+  .search-bar input {
+	width: 100%;
+	padding: 0.8rem 1rem;
+	border-radius: 20px;
+	border: none;
+	background-color: #242424;
+	color: white;
+  }
+
+  @media screen and (max-width: 1200px) {
+	.search-bar {
+	  flex: 0 1 600px;
+	}
+  }
+  
+  @media screen and (max-width: 992px) {
+	.search-bar {
+	  flex: 0 1 400px;
+	}
+  }
+  
+  @media screen and (max-width: 768px) {
+	.search-bar {
+	  flex: 0 1 300px;
+	}
+  }
+  
+  @media screen and (max-width: 576px) {
+	.search-bar {
+	  flex: 0 1 200px;
+	}
+  }
+  
+  /* Sección derecha: Perfil */
+  .profile-info {
+	display: flex;
+	align-items: center;
+  }
+  
+  .profile-picture {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: #3b3b3b;
+	margin-right: 20px;
+	padding: 7px;
+  }
+  
+  .profile-picture:hover {
+	background-color: #3b3b3b;
+  }
+  
+  .logout-button {
+	background: white;
+	color: #121212;
+	border: none;
+	border-radius: 20px;
+	padding: 8px 16px;
+	font-weight: bold;
+	cursor: pointer;
+  }

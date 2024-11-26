@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "../styles/SearchBar.css";
 
 interface SearchBarProps {
   onSongSelect: (uri: string) => void;
@@ -35,7 +36,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSongSelect }) => {
   return (
     <div className="search-bar">
       <form onSubmit={handleSearch}>
-        <input
+        <input className='search-container'
           type="text"
           placeholder="Buscar canción..."
           value={query}
@@ -43,14 +44,14 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSongSelect }) => {
         />
         <button type="submit">Buscar</button>
       </form>
-      <div className="search-results">
+      {/* <div className="search-results">
         {results.map((track) => (
           <div key={track.id} className="search-result-item">
             <p>{track.name} - {track.artists.map((artist: any) => artist.name).join(', ')}</p>
             <button onClick={() => onSongSelect(track.uri)}>Seleccionar</button>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
