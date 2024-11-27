@@ -128,7 +128,7 @@ const UserProfile: React.FC = () => {
                         )}
                     </div>
 
-                    {/* Canciones recientes */}
+                    {/* Canciones recientes va mal*/}
                     <div className="recent-tracks-container">
                         <h3>Escuchado recientemente</h3>
                         {recentTracks.length > 0 ? (
