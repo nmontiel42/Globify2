@@ -1,17 +1,19 @@
 /* Contenedor principal */
 
 .header-bar {
-	display: flex;
-	align-items: center;
-	padding: 1rem;
-	background: none;
-  }
-  
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: -5px; /* Reduce el espacio exterior */
+    background: none;
+}
+
   .header-profile {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
+	margin-right: 20px;
   }
   
   /* Sección izquierda: Logo y botón home */
@@ -34,6 +36,7 @@
   .spotify-logo {
 	height: 30px;
 	margin-right: 10px;
+	margin-left: 13px;
 	background: none;
 	margin-top: 20px;
   }
