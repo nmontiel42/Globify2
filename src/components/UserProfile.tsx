@@ -87,13 +87,16 @@ const UserProfile: React.FC = () => {
                             topTracks.map((track) => (
                                 <iframe
                                     key={track.id}
-                                    style={{ borderRadius: '12px', marginBottom: '12px' }}
+                                    style={{ borderRadius: '12px', 
+											margin: '12px',
+											position: 'relative',
+											zIndex: 11 }}
                                     src={`https://open.spotify.com/embed/track/${track.id}`}
-                                    width="100%"
+                                    width="25%"
                                     height="80"
                                     frameBorder="0"
-                                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                                     loading="lazy"
+									allow="encrypted-media"
                                 ></iframe>
                             ))
                         ) : (
