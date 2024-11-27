@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Profile.css';
 import PlayBar from './Playbar';
-import HeaderBar from './Headerbar';
+import HeaderBar from './HeaderBar';
 
 const UserProfile: React.FC = () => {
 	const [userProfile, setUserProfile] = useState<any>(null);
@@ -67,7 +67,7 @@ const UserProfile: React.FC = () => {
 	}
 
 	return (
-		<body>
+		<div>
 			<header>
 				<HeaderBar
 					userProfile={userProfile}
@@ -106,7 +106,7 @@ const UserProfile: React.FC = () => {
 			<footer className='footer-index'>
 				<PlayBar />
 			</footer>
-		</body>
+			</div>
 	);
 };
 

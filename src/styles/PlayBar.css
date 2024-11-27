@@ -2,14 +2,39 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  right: 0;
-  height: 100px;
+  width: 100%;
+  height: 90px;
   background-color: #181818;
   border-top: 1px solid #282828;
-  padding: 0 16px;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 0;
+  z-index: 100;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  justify-content: center;
+}
+
+.controls {
+  flex: 2;
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+}
+
+.volume-controls {
+  flex: 1;
+  max-width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
 }
 
 .track-info {
