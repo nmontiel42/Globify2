@@ -135,7 +135,7 @@ const SpotifyAuth: React.FC = () => {
       <div className="spotify-auth-container">
         <div className="spotify-auth-card">
           <img src={logoSpotify} alt="Spotify Logo" className="spotify-logo" />
-          <h1 className="spotify-title">Inicia sesión en Spotify</h1>
+          <h1 className="spotify-title">Inicia sesión en Globify</h1>
           <button className="spotify-login-button" onClick={() => window.location.href = AUTH_URL}>
             Iniciar sesión
           </button>
