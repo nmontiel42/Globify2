@@ -84,3 +84,7 @@ body, html {
 	align-items: center; /* Centrar el texto verticalmente */
 	width: 100%; /* Asegurarse de que ocupe todo el ancho disponible */
   }
+
+  .profile-container {
+	height: 100vh;
+  }

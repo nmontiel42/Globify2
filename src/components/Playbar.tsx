@@ -177,28 +177,28 @@ const PlayBar: React.FC = () => {
   const progress = (currentTrackTime / trackDuration) * 100;
 
   return (
-    <footer className="playback-bar">
+    <footer className="playback-bar1">
 
-      <div className="track-info">
+      <div className="track-info1">
 
         <img
           src={currentTrack.album.images[2].url}
           alt={currentTrack.name}
-          className="album-art"
+          className="album-art1"
         />
 
-        <div className="track-details">
-          <p className="track-name">{currentTrack.name}</p>
-          <p className="track-artist">{currentTrack.artists[0].name}</p>
+        <div className="track-details1">
+          <p className="track-name1">{currentTrack.name}</p>
+          <p className="track-artist1">{currentTrack.artists[0].name}</p>
         </div>
 
         {/* Añadir botón de like de Spotify */}
         <button
-          className={`like-button ${isLiked ? "liked" : ""}`}
+          className={`like-button1 ${isLiked ? "liked" : ""}`}
           onClick={toggleLike}
         >
           <svg
-            className="icon"
+            className="icon1"
             role="img"
             height="24"
             width="24"
@@ -212,59 +212,59 @@ const PlayBar: React.FC = () => {
 
       </div>
 
-      <div className="controls">
-        <div className="control-buttons">
-          <button className="control-button shuffle-button">
+      <div className="controls1">
+        <div className="control-buttons1">
+          <button className="control-button1 shuffle-button1">
             <svg role="img" height="18" width="18" viewBox="0 0 16 16" fill="currentColor">
               <path d="M11.696 8.854l-4.5 4.5a.75.75 0 0 1-1.061-1.061L9.803 9H1a.75.75 0 0 1 0-1.5h8.803L6.135 3.707a.75.75 0 0 1 1.061-1.061l4.5 4.5a.75.75 0 0 1 0 1.061z"></path>
             </svg>
           </button>
-          <button className="control-button" onClick={handlePrevious}>
+          <button className="control-button1" onClick={handlePrevious}>
             <SkipBack size={24} />
           </button>
-          <button className="control-button play-pause" onClick={handlePlayPause}>
+          <button className="control-button1 play-pause1" onClick={handlePlayPause}>
             {isPlaying ? <Pause size={24} fill='black'/> : <Play size={24} fill='black'/>}
           </button>
-          <button className="control-button" onClick={handleNext}>
+          <button className="control-button1" onClick={handleNext}>
             <SkipForward size={24} />
           </button>
-          <button className="control-button repeat-button">
+          <button className="control-button1 repeat-button1">
             <svg role="img" height="16" width="16" viewBox="0 0 16 16">
               <path fill="currentColor" d="M0 4.75A3.75 3.75 0 0 1 3.75 1h8.5A3.75 3.75 0 0 1 16 4.75v5a3.75 3.75 0 0 1-3.75 3.75H9.81l1.018 1.018a.75.75 0 1 1-1.06 1.06L6.939 12.75l2.829-2.828a.75.75 0 1 1 1.06 1.06L9.811 12h2.439a2.25 2.25 0 0 0 2.25-2.25v-5a2.25 2.25 0 0 0-2.25-2.25h-8.5A2.25 2.25 0 0 0 1.5 4.75v5A2.25 2.25 0 0 0 3.75 12H5v1.5H3.75A3.75 3.75 0 0 1 0 9.75v-5z"></path>
             </svg>
           </button>
         </div>
-        <div className="progress-container">
-          <span className="time-elapsed">{formatTime(currentTrackTime)}</span>
+        <div className="progress-container1">
+          <span className="time-elapsed1">{formatTime(currentTrackTime)}</span>
           <div
             ref={progressBarRef}
-            className="progress-bar"
+            className="progress-bar1"
             onMouseDown={handleDragStart}
             onMouseMove={handleDragMove}
             onMouseUp={handleDragEnd}
             onMouseLeave={handleDragEnd}
           >
-            <div className="progress" style={{ width: `${progress}%` }} />
+            <div className="progress1" style={{ width: `${progress}%` }} />
           </div>
-          <span className="time-total">{formatTime(trackDuration)}</span>
+          <span className="time-total1">{formatTime(trackDuration)}</span>
         </div>
       </div>
 
-      <div className="volume-controls">
+      <div className="volume-controls1">
         <button
-          className="control-button lyrics-button"
+          className="control-button1 lyrics-button1"
           title="Lyrics"
         >
         </button>
         <button
-          className="control-button"
+          className="control-button1"
           onClick={handleToggleMute}
           title="Mute"
         >
           {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
         </button>
         <div
-          className="volume-bar"
+          className="volume-bar1"
           ref={volumeBarRef}
           onClick={handleVolumeBarClick}
           onMouseDown={handleVolumeDragStart}
@@ -273,14 +273,14 @@ const PlayBar: React.FC = () => {
           onMouseLeave={handleVolumeDragEnd}
         >
           <div
-            className="volume-progress"
+            className="volume-progress1"
             style={{
               width: `${isMuted ? 0 : volume}%`,
               backgroundColor: isVolumeDragging ? '#1db954' : '#ffffff'
             }}
           />
         </div>
-        <button className="control-button">
+        <button className="control-button1">
           <Maximize2 size={16} />
         </button>
       </div>

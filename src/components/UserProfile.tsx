@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Profile.css';
 import PlayBar from './Playbar';
-import HeaderBar from './Headerbar';
+import HeaderBar from './HeaderBar';
 import Sidebar from './Sidebar'; // Importamos el componente Sidebar
 
 const UserProfile: React.FC = () => {
@@ -113,9 +113,6 @@ const UserProfile: React.FC = () => {
 			<main className={`main-container ${isSidebarOpen? 'sidebar-open' : ''}`}>
 				<div className="profile-container">
 					<div className="show-playlist">
-						<div className="library-icon" onClick={toggleSidebar}>
-							<h3>Librería</h3>
-						</div>
 
 						{/* Mostrar Sidebar solo si está abierta */}
 						<Sidebar

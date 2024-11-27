@@ -9,7 +9,7 @@
 header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1;
 }
 
 .search-results-container {
@@ -72,10 +72,4 @@ footer {
   width: 100%;
   z-index: 100;
   background: transparent; /* Aseguramos que el footer sea transparente */
-}
-
-/* Eliminar cualquier padding o margin adicional del footer */
-.search-results-page footer {
-  padding: 0;
-  margin: 0;
 }
