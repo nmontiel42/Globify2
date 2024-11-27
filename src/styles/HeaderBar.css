@@ -6,6 +6,7 @@
     padding: 0;
     margin: -5px; /* Reduce el espacio exterior */
     background: none;
+	background-color: #121212;
 }
 
   .header-profile {
