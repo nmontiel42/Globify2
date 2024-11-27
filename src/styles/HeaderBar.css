@@ -157,13 +157,28 @@
 	min-width: 200px;
 	background-color: #242424;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+	color: rgb(190, 190, 190);
 	z-index: 9999;
   }
 
   .profile-details li {
-	font-size: 11px;
+	font-size: 12px;
   	padding: 8px 0;
-  	border-bottom: 1px solid #3e3e3e;
+  }
+
+  .profile-details a {
+	color: rgb(190, 190, 190);
+	text-decoration: none;
+  }
+  
+  .profile-details a:hover {
+	color: white;
+	text-decoration: underline;
+  }
+
+  .line-logout {
+	border-top: 1px solid #3e3e3e;
+	padding: 8px 0;
   }
 
   .profile-details li:last-child {
@@ -171,11 +186,11 @@
   }
   
   .logout-button {
-	background: white;
-	color: #121212;
+	background-color: #24242400;
+	color: rgb(190, 190, 190);
 	border: none;
-	border-radius: 20px;
-	padding: 8px 16px;
 	font-weight: bold;
 	cursor: pointer;
+	position:absolute;
+	padding: 0;
   }

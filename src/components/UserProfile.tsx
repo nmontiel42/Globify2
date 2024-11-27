@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Profile.css';
-import logoSpotify from '../assets/logo.svg';
-import SearchBar from './SearchBar';
 import PlayBar from './Playbar';
 import HeaderBar from './Headerbar';
 
@@ -12,8 +10,6 @@ const UserProfile: React.FC = () => {
 	const token = localStorage.getItem('spotifyToken');
 	const navigate = useNavigate();
 	const [topTracks, setTopTracks] = useState<any[]>([]);
-	const [recentTracks, setRecentTracks] = useState<any[]>([]);
-
 
 	useEffect(() => {
 		const fetchUserProfile = async () => {
@@ -52,28 +48,9 @@ const UserProfile: React.FC = () => {
 			}
 		};
 
-		const fetchRecentlyPlayed = async () => {
-            try {
-                const response = await fetch('https://api.spotify.com/v1/me/player/recently-played?limit=10', {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                });
-                if (response.ok) {
-                    const data = await response.json();
-                    setRecentTracks(data.items); // Guardar canciones recientes
-                } else {
-                    console.error('Error al obtener canciones recientes', response.status);
-                }
-            } catch (error) {
-                console.error('Error al obtener canciones recientes:', error);
-            }
-        };
-
 		if (token) {
 			fetchUserProfile();
 			fetchTopTracks();
-			fetchRecentlyPlayed();
 		} else {
 			navigate('/');
 		}
@@ -83,10 +60,6 @@ const UserProfile: React.FC = () => {
 		localStorage.removeItem('spotifyToken');
 		setUserProfile(null);
 		navigate('/'); // Redirigir a la página principal o de inicio de sesión
-	};
-
-	const toggleInfoVisibility = () => {
-		setIsInfoVisible(!isInfoVisible); // Alternar visibilidad al hacer clic en la foto
 	};
 
 	if (!userProfile) {
@@ -125,27 +98,6 @@ const UserProfile: React.FC = () => {
                             ))
                         ) : (
                             <p>Cargando tus canciones favoritas...</p>
-                        )}
-                    </div>
-
-                    {/* Canciones recientes*/}
-                    <div className="recent-tracks-container">
-                        <h3>Escuchado recientemente</h3>
-                        {recentTracks.length > 0 ? (
-                            recentTracks.map((track) => (
-                                <iframe
-                                    key={track.track.id}
-                                    style={{ borderRadius: '12px', marginBottom: '12px' }}
-                                    src={`https://open.spotify.com/embed/track/${track.track.id}`}
-                                    width="100%"
-                                    height="80"
-                                    frameBorder="0"
-                                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                                    loading="lazy"
-                                ></iframe>
-                            ))
-                        ) : (
-                            <p>No se encontraron canciones recientes.</p>
                         )}
                     </div>
                 </div>

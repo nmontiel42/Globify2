@@ -104,7 +104,7 @@ const HeaderBar: React.FC<HeaderBarProps> = ({ userProfile, onSongSelect, handle
                   Visitar
                 </a>
               </li>
-              <li>
+              <li className="line-logout">
                 <button onClick={handleLogout} className="logout-button">
                   Cerrar sesión
                 </button>
