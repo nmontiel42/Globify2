@@ -16,3 +16,69 @@ body, html {
 	position: relative;
 	bottom: 0;
   }
+
+/* Contenedor de la cabecera donde está el logo de Spotify y la librería */
+.header-container {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 20px;
+  }
+  
+  .spotify-logo {
+	width: 40px;
+	height: 40px;
+  }
+  
+  .library-icon {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	position: absolute;
+	top: 80px;
+	left: 10px;
+  }
+  
+  .library-icon h3 {
+	margin: 0;
+	font-size: 18px;
+	color: #1db954; /* Color verde de Spotify */
+  }
+  
+  .top-tracks-container {
+	margin-top: 20px;
+  }
+  
+  /* Otros estilos para el contenido y las playlists */
+  .playlists-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+  }
+  
+  .playlist-thumbnail {
+	cursor: pointer;
+  }
+  
+  .playlist-thumbnail img {
+	width: 60px;
+	height: 60px;
+	border-radius: 8px;
+  }
+  
+  .show-playlist {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	justify-content: center;
+  }
+
+  .welcome-msg {
+	font-size: 24px;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center; /* Centrar el texto horizontalmente */
+	align-items: center; /* Centrar el texto verticalmente */
+	width: 100%; /* Asegurarse de que ocupe todo el ancho disponible */
+  }

@@ -1,0 +1,196 @@
+/* Sidebar.css */
+
+/* Estructura general */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #121212;
+  padding: 20px;
+  color: white;
+  z-index: 2;
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+  margin-top: 80px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 50px;
+  /* Ancho cuando está cerrada */
+  height: calc(100% - 80px);
+  background-color: #121212;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #121212;
+  margin-left: 10px;
+}
+
+.sidebar.open {
+  width: 250px;
+  /* Ancho cuando está abierta */
+  overflow-y: auto;
+  /* Habilita el scroll vertical */
+  scrollbar-width: thin;
+  /* Personaliza el ancho del scroll (Firefox) */
+  scrollbar-color: #888 #121212;
+
+}
+
+.sidebar.closed {
+  width: 100px;
+  /* Ancho cuando está cerrada */
+  overflow-y: auto;
+  /* Habilita el scroll vertical */
+  scrollbar-width: thin;
+  /* Personaliza el ancho del scroll (Firefox) */
+  scrollbar-color: #888 #121212;
+}
+
+.sidebar-header {
+  padding: 10px;
+  text-align: right;
+}
+
+.close-btn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* Permite que el contenido interno llene todo el alto */
+  overflow-y: auto;
+  /* Habilita el scroll vertical */
+  scrollbar-width: thin;
+  /* Personaliza el ancho del scroll (Firefox) */
+  scrollbar-color: #888 #121212;
+  /* Personaliza los colores del scroll */
+}
+
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.spotify-logo img {
+  width: 40px;
+  margin-bottom: 20px;
+}
+
+.playlist-list {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.playlist-thumbnail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: margin-bottom 0.3s ease;
+}
+
+.playlist-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.playlist-title {
+  color: white;
+  font-size: 14px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+
+/* Cuando la sidebar está expandida, aumentar el espacio entre los elementos */
+.sidebar.open .playlist-thumbnail {
+  margin-bottom: 20px;
+}
+
+.sidebar.open .playlist-title {
+  display: block;
+  /* Mostrar el nombre cuando está expandida */
+}
+
+.sidebar.closed .playlist-title {
+  display: none;
+  /* Ocultar el nombre cuando está cerrada */
+}
+
+/* Estilo del header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: #121212;
+  padding: 20px;
+  color: white;
+}
+
+/* Ajustar el contenido principal para que no quede cubierto por la sidebar */
+main {
+  margin-top: 80px;
+  margin-left: 100px;
+  /* Ajusta este valor según el ancho de la sidebar */
+  transition: margin-left 0.3s ease;
+}
+
+main.sidebar-open {
+  margin-left: 250px;
+  /* Ancho de la sidebar abierta */
+}
+
+footer {
+  z-index: 2;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 13px;
+}
+
+.toggle-icon {
+  font-size: 24px;
+  color: white;
+}
+
+.toggle-text {
+  font-size: 16px;
+  color: white;
+}
