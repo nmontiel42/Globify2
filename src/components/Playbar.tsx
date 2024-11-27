@@ -223,7 +223,7 @@ const PlayBar: React.FC = () => {
             <SkipBack size={24} />
           </button>
           <button className="control-button play-pause" onClick={handlePlayPause}>
-            {isPlaying ? <Pause size={24} /> : <Play size={24} />}
+            {isPlaying ? <Pause size={24} fill='black'/> : <Play size={24} fill='black'/>}
           </button>
           <button className="control-button" onClick={handleNext}>
             <SkipForward size={24} />
