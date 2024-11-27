@@ -30,20 +30,22 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, playlists, onPlaylistClick, o
       <div className="sidebar-content">
         <div className="sidebar-nav">
           <div className={`playlist-list ${isOpen ? 'expanded' : ''}`}>
-            {playlists.length > 0 ? (
+            {playlists && playlists.length > 0 ? (
               playlists.map((playlist) => (
-                <div
-                  key={playlist.id}
-                  className="playlist-thumbnail"
-                  onClick={() => onPlaylistClick(playlist)}
-                >
-                  <img
-                    src={playlist.images?.[0]?.url || 'https://via.placeholder.com/60x60?text=No+Image'}
-                    alt={playlist.name}
-                    className="playlist-image"
-                  />
-                  {isOpen && <p className="playlist-title">{playlist.name}</p>}
-                </div>
+                playlist ? (  // Comprobación de que playlist no es null ni undefined
+                  <div
+                    key={playlist.id}
+                    className="playlist-thumbnail"
+                    onClick={() => onPlaylistClick(playlist)}
+                  >
+                    <img
+                      src={playlist.images?.[0]?.url || 'https://via.placeholder.com/60x60?text=No+Image'}
+                      alt={playlist.name}
+                      className="playlist-image"
+                    />
+                    {isOpen && <p className="playlist-title">{playlist.name}</p>}
+                  </div>
+                ) : null  // Si playlist es null o undefined, no renderiza nada
               ))
             ) : (
               <p>No playlists available</p>
@@ -54,5 +56,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, playlists, onPlaylistClick, o
     </div>
   );
 };
+
 
 export default Sidebar;
