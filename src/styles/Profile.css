@@ -8,7 +8,6 @@ body, html {
   main {
 	flex-grow: 1; /* Asegura que el contenido principal ocupe el espacio restante */
 	padding: 20px;
-	background-color: #171717;
 	border-radius: 6px;
   }
 
@@ -87,4 +86,20 @@ body, html {
 
   .profile-container {
 	height: 100vh;
+	flex: 1;
   }
+
+.main-container {
+	display: flex;
+}
+
+.rightbar-container {
+	width: 30%;
+	background-color: #1c1c1c;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.barright {
+	padding: 10px;
+}

@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/Profile.css';
 import PlayBar from './Playbar';
 import HeaderBar from './HeaderBar';
-import Sidebar from './Sidebar'; // Importamos el componente Sidebar
+import Sidebar from './Sidebar';
+import Rightbar from './RightBar';
 
 const UserProfile: React.FC = () => {
 	const [userProfile, setUserProfile] = useState<any>(null);
@@ -126,26 +127,12 @@ const UserProfile: React.FC = () => {
 						{/* CONTENIDO PRINCIPAL */}
 						<h2 className="welcome-msg">Bienvenido/a, {userProfile.display_name}</h2>
 					</div>
+				</div>
 
-					<div className="top-tracks-container">
-						<h3>Tus canciones favoritas</h3>
-						{topTracks.length > 0 ? (
-							topTracks.map((track) => (
-								<iframe
-									key={track.id}
-									style={{ borderRadius: '12px', marginBottom: '12px' }}
-									src={`https://open.spotify.com/embed/track/${track.id}`}
-									width="100%"
-									height="80"
-									frameBorder="0"
-									allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-									loading="lazy"
-								></iframe>
-							))
-						) : (
-							<p>Cargando tus canciones favoritas...</p>
-						)}
-					</div>
+				
+
+				<div className="rightbar-container">
+					<Rightbar topTracks={topTracks} />
 				</div>
 			</main>
 
