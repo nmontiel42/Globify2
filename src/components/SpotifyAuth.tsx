@@ -111,7 +111,7 @@ const SpotifyAuth: React.FC = () => {
       console.log('Token disponible, obteniendo perfil...');
       fetchUserProfile();
     }
-  }, [token]);
+  }, [token]); //eslint-disable-line
 
   const handleLogout = () => {
     localStorage.removeItem('spotifyToken');
