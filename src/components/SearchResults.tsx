@@ -78,9 +78,9 @@ const SearchResults: React.FC = () => {
 
   return (
     <div className="search-results-page">
-      <HeaderBar 
-        userProfile={userProfile} 
-        onSongSelect={() => {}}
+      <HeaderBar
+        userProfile={userProfile}
+        onSongSelect={() => { }}
         handleLogout={handleLogout}
       />
       <main className="search-results-container">
@@ -94,6 +94,7 @@ const SearchResults: React.FC = () => {
                 <p>{track.artists.map((artist: any) => artist.name).join(', ')}</p>
               </div>
               <iframe
+                title={`Reproductor de Spotify - ${track.name}`}
                 style={{ borderRadius: '12px' }}
                 src={`https://open.spotify.com/embed/track/${track.id}`}
                 width="100%"
@@ -101,7 +102,8 @@ const SearchResults: React.FC = () => {
                 frameBorder="0"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
-              ></iframe>
+              />
+
             </div>
           ))}
         </div>

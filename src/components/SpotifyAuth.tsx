@@ -3,59 +3,26 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/SpotifyAuth.css';
 import logoSpotify from '../assets/logo.svg';
 
-const CLIENT_ID = process.env.REACT_APP_CLIENT_ID; 
-const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET; // Asegúrate de tener tu client_secret
-const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI; 
+const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
+const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET;
+const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI;
 const AUTH_ENDPOINT = process.env.REACT_APP_AUTH_ENDPOINT;
 const RESPONSE_TYPE = process.env.REACT_APP_RESPONSE_TYPE;
-const SCOPES = 'user-read-private user-read-email user-top-read'; // Incluye 'user-top-read'
+const SCOPES = 'user-read-private user-read-email user-top-read';
 
 const AUTH_URL = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(SCOPES)}`;
 
-
 const SpotifyAuth: React.FC = () => {
   const [token, setToken] = useState<string | null>(null);
-  const [userProfile, setUserProfile] = useState<any>(null);
+  const [, setUserProfile] = useState<any>(null);
   const [refreshToken, setRefreshToken] = useState<string | null>(null);
   const navigate = useNavigate();
 
-  // Obtener el token de la URL
   const getTokenFromUrl = () => {
     const token = window.location.hash.split('&')[0].split('=')[1];
     return token ? token : null;
   };
 
-  useEffect(() => {
-    // Verifica si el token está presente en la URL o en el localStorage
-    if (window.location.hash) {
-      const tokenFromUrl = getTokenFromUrl();
-      console.log('Token desde la URL:', tokenFromUrl); // Depuración
-      setToken(tokenFromUrl);
-      if (tokenFromUrl) {
-        localStorage.setItem('spotifyToken', tokenFromUrl);
-      }
-      window.location.hash = '';
-    } else {
-      const savedToken = localStorage.getItem('spotifyToken');
-      const savedRefreshToken = localStorage.getItem('spotifyRefreshToken');
-      if (savedToken) {
-        console.log('Token recuperado desde localStorage:', savedToken); // Depuración
-        setToken(savedToken);
-      }
-      if (savedRefreshToken) {
-        setRefreshToken(savedRefreshToken);
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    if (token) {
-      console.log('Token disponible, obteniendo perfil...');
-      fetchUserProfile();
-    }
-  }, [token]);
-
-  // Obtener perfil de usuario
   const fetchUserProfile = async () => {
     try {
       const response = await fetch('https://api.spotify.com/v1/me', {
@@ -66,16 +33,16 @@ const SpotifyAuth: React.FC = () => {
 
       if (response.ok) {
         const userData = await response.json();
-        console.log('Perfil de usuario obtenido:', userData); // Depuración
+        console.log('Perfil de usuario obtenido:', userData);
         setUserProfile(userData);
-        navigate('/user-profile'); // Redirigir al perfil del usuario
+        navigate('/user-profile');
       } else if (response.status === 401) {
         console.error('Token caducado, intentando renovar...');
         if (refreshToken) {
-          await refreshAccessToken(refreshToken); // Intentar renovar el token
+          await refreshAccessToken(refreshToken);
         } else {
           console.error('No se dispone de un refresh token, redirigiendo al login...');
-          window.location.href = AUTH_URL; // Redirigir para iniciar sesión de nuevo
+          window.location.href = AUTH_URL;
         }
       } else {
         console.error('Error al obtener perfil de usuario', response.status);
@@ -85,7 +52,6 @@ const SpotifyAuth: React.FC = () => {
     }
   };
 
-  // Función para renovar el token usando el refresh token
   const refreshAccessToken = async (refreshToken: string) => {
     const url = 'https://accounts.spotify.com/api/token';
     const body = new URLSearchParams({
@@ -104,30 +70,56 @@ const SpotifyAuth: React.FC = () => {
       if (response.ok) {
         const data = await response.json();
         const newAccessToken = data.access_token;
-        const newRefreshToken = data.refresh_token; // Asegúrate de obtener el refresh token nuevo, si es posible
+        const newRefreshToken = data.refresh_token;
         localStorage.setItem('spotifyToken', newAccessToken);
         localStorage.setItem('spotifyRefreshToken', newRefreshToken);
         setToken(newAccessToken);
         setRefreshToken(newRefreshToken);
         console.log('Token renovado con éxito');
-        fetchUserProfile(); // Vuelve a intentar obtener el perfil del usuario
+        fetchUserProfile();
       } else {
         console.error('Error al renovar el token de acceso');
-        window.location.href = AUTH_URL; // Si no se puede renovar el token, redirige al login
+        window.location.href = AUTH_URL;
       }
     } catch (error) {
       console.error('Error al renovar el token:', error);
     }
   };
 
-  // Función de cerrar sesión
+  useEffect(() => {
+    if (window.location.hash) {
+      const tokenFromUrl = getTokenFromUrl();
+      console.log('Token desde la URL:', tokenFromUrl);
+      setToken(tokenFromUrl);
+      if (tokenFromUrl) {
+        localStorage.setItem('spotifyToken', tokenFromUrl);
+      }
+      window.location.hash = '';
+    } else {
+      const savedToken = localStorage.getItem('spotifyToken');
+      const savedRefreshToken = localStorage.getItem('spotifyRefreshToken');
+      if (savedToken) {
+        console.log('Token recuperado desde localStorage:', savedToken);
+        setToken(savedToken);
+      }
+      if (savedRefreshToken) {
+        setRefreshToken(savedRefreshToken);
+      }
+    }
+
+    if (token) {
+      console.log('Token disponible, obteniendo perfil...');
+      fetchUserProfile();
+    }
+  }, [token]);
+
   const handleLogout = () => {
     localStorage.removeItem('spotifyToken');
     localStorage.removeItem('spotifyRefreshToken');
     setToken(null);
     setUserProfile(null);
     setRefreshToken(null);
-    navigate('/'); // Redirigir al inicio o página de inicio de sesión
+    navigate('/');
   };
 
   if (!token) {
@@ -153,7 +145,10 @@ const SpotifyAuth: React.FC = () => {
   }
 
   return (
-    <div className="spotify-loading">Cargando perfil del usuario...</div>
+    <div className="spotify-loading">
+      Cargando perfil del usuario...
+      <button onClick={handleLogout}>Cerrar sesión</button>
+    </div>
   );
 };
 
