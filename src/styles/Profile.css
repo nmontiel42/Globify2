@@ -25,6 +25,7 @@ main {
 	position: relative;
 	bottom: 0;
 }
+}
 
 /* Contenedor de la cabecera donde está el logo de Spotify y la librería */
 .header-container {
@@ -35,8 +36,14 @@ main {
 }
 
 .spotify-logo {
+}
+
+.spotify-logo {
 	width: 40px;
 	height: 40px;
+}
+
+.library-icon {
 }
 
 .library-icon {
@@ -50,8 +57,16 @@ main {
 }
 
 .library-icon h3 {
+}
+
+.library-icon h3 {
 	margin: 0;
 	font-size: 18px;
+	color: #1db954;
+	/* Color verde de Spotify */
+}
+
+.top-tracks-container {
 	color: #1db954;
 	/* Color verde de Spotify */
 }
@@ -62,13 +77,23 @@ main {
 
 /* Otros estilos para el contenido y las playlists */
 .playlists-container {
+}
+
+/* Otros estilos para el contenido y las playlists */
+.playlists-container {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 10px;
 }
 
 .playlist-thumbnail {
+}
+
+.playlist-thumbnail {
 	cursor: pointer;
+}
+
+.playlist-thumbnail img {
 }
 
 .playlist-thumbnail img {
@@ -78,13 +103,18 @@ main {
 }
 
 .show-playlist {
+}
+
+.show-playlist {
 	display: flex;
 	align-items: center;
 	gap: 10px;
 	justify-content: center;
 }
 
-.welcome-container {
+.welcome-msg {
+	font-size: 24px;
+	margin-bottom: 20px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -114,11 +144,16 @@ main {
 	width: 100%;
 }
 
+/* Right sidebar container */
 .rightbar-container {
 	width: 30%;
 	/* Ajusta el ancho del rightbar */
 	background-color: #1c1c1c;
+	scrollbar-width: thin;
 	padding: 10px;
+	/* Altura fija entre header y footer */
+	height: calc(100vh - 80px - 100px);
+	/* Calcula la altura restante */
 	border-radius: 10px;
 	position: sticky;
 	top: 20px;
@@ -132,6 +167,20 @@ main {
 	/* Alinea el contenido a la izquierda dentro de este contenedor */
 }
 
-.barright {
-	padding: 10px;
+.rightbar-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.rightbar-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.rightbar-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.rightbar-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
