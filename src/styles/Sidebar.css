@@ -33,26 +33,19 @@
   transition: width 0.3s ease;
   overflow: hidden;
   z-index: 1;
-  scrollbar-width: thin;
-  scrollbar-color: #888 #121212;
   margin-left: 10px;
 }
-
 
 .sidebar.open {
   width: 250px;
   height: calc(100% + 50px); /* Aumenta la altura cuando está abierta */
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #888 #121212;
 }
 
 .sidebar.closed {
   width: 100px;
   height: calc(100% + 50px); /* Aumenta la altura cuando está cerrada */
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #888 #121212;
 }
 
 .sidebar-header {
@@ -75,12 +68,7 @@
   /* Permite que el contenido interno llene todo el alto */
   overflow-y: auto;
   /* Habilita el scroll vertical */
-  scrollbar-width: thin;
-  /* Personaliza el ancho del scroll (Firefox) */
-  scrollbar-color: #888 #121212;
-  /* Personaliza los colores del scroll */
 }
-
 
 .sidebar-nav {
   display: flex;
@@ -171,4 +159,23 @@ footer {
 .toggle-text {
   font-size: 16px;
   color: white;
+}
+
+/* Eliminar todos los estilos individuales de scrollbar existentes para .sidebar, .sidebar.open, .sidebar.closed, .sidebar-content */
+
+/* Usar los mismos estilos globales definidos en Track.css */
+.sidebar,
+.sidebar.open,
+.sidebar.closed,
+.sidebar-content {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.3s ease;
+}
+
+.sidebar:hover,
+.sidebar.open:hover,
+.sidebar.closed:hover,
+.sidebar-content:hover {
+  scrollbar-color: #555555 #121212;
 }

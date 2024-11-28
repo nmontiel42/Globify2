@@ -149,22 +149,29 @@ const SearchResults: React.FC = () => {
           <div className="results-grid">
             {results.map((track) => (
               <div key={track.id} className="track-card">
-                <img src={track.album.images[0]?.url} alt={track.name} />
-                <div className="track-info">
-                  <h3>{track.name}</h3>
-                  <p>{track.artists.map((artist: any) => artist.name).join(', ')}</p>
-                </div>
-                <iframe
-                  title={`Reproductor de Spotify - ${track.name}`}
-                  style={{ borderRadius: '12px' }}
-                  src={`https://open.spotify.com/embed/track/${track.id}`}
-                  width="100%"
-                  height="80"
-                  frameBorder="0"
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                />
+              <img src={track.album.images[0]?.url} alt={track.name} />
+              <div className="track-info">
+                <h3>{track.name}</h3>
+                <p>{track.artists.map((artist: any) => artist.name).join(', ')}</p>
               </div>
+              <iframe
+                title={`Reproductor de Spotify - ${track.name}`}
+                style={{ 
+                  borderRadius: '12px',
+                  border: 'none',
+                  overflow: 'hidden',
+                  width: '100%',
+                  maxWidth: '100%'
+                }} 
+                src={`https://open.spotify.com/embed/track/${track.id}`}
+                width="100%"
+                height="80"
+                frameBorder="0"
+                scrolling="no"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen;"
+                loading="lazy"
+              />
+            </div>
             ))}
           </div>
         </main>

@@ -15,6 +15,31 @@
   padding: 20px;
   overflow-y: auto;
   margin: 0 20px;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.3s ease;
+}
+
+.track-container:hover {
+  scrollbar-color: #555555 #121212;
+}
+
+.track-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.track-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.track-container::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 4px;
+  transition: background-color 0.4s ease;
+}
+
+.track-container:hover::-webkit-scrollbar-thumb {
+  background-color: #555555;
 }
 
 .track-detail {
@@ -55,8 +80,48 @@
 }
 
 .rightbar-container {
-  width: 300px;
+  width: 400px;
   padding: 20px;
   background: #121212;
   border-left: 1px solid #282828;
+}
+
+.rightbar-container,
+.search-results-container,
+.sidebar.open {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.3s ease;
+}
+
+.rightbar-container:hover,
+.search-results-container:hover,
+.sidebar.open:hover {
+  scrollbar-color: #555555 #121212;
+}
+
+.rightbar-container::-webkit-scrollbar,
+.search-results-container::-webkit-scrollbar,
+.sidebar.open::-webkit-scrollbar {
+  width: 8px;
+}
+
+.rightbar-container::-webkit-scrollbar-track,
+.search-results-container::-webkit-scrollbar-track,
+.sidebar.open::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.rightbar-container::-webkit-scrollbar-thumb,
+.search-results-container::-webkit-scrollbar-thumb,
+.sidebar.open::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.rightbar-container:hover::-webkit-scrollbar-thumb,
+.search-results-container:hover::-webkit-scrollbar-thumb,
+.sidebar.open:hover::-webkit-scrollbar-thumb {
+  background-color: #555555;
 }

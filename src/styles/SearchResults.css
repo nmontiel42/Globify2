@@ -20,11 +20,40 @@ header {
   display: flex;
   padding-left: 80px;
   overflow-y: auto;
-  margin: 0 20px;
   flex-direction: column;
   align-content: stretch;
   justify-content: space-evenly;
   align-items: stretch;
+  padding: 20px auto; /* Aumentar padding lateral */
+  width: 100%;
+  max-width: 1800px; /* Ancho máximo del contenedor */
+  margin: 0 auto;
+  height: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent; /* Color inicial transparente */
+  transition: scrollbar-color 0.3s ease; /* Transición suave */
+}
+
+.search-results-container:hover {
+  scrollbar-color: #555555 #121212; /* Color al hacer hover */
+}
+
+.search-results-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.search-results-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.search-results-container::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.search-results-container:hover::-webkit-scrollbar-thumb {
+  background-color: #555555;
 }
 
 .search-results-container h2 {
@@ -36,16 +65,28 @@ header {
 
 .results-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+  padding: 0;
+  padding-left: 10rem;
+  width: 80%;
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow: visible;
 }
 
 .track-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   background: #181818;
   border-radius: 8px;
-  padding: 16px;
+  padding: 20px; /* Aumentado de 16px a 20px */
   transition: background-color 0.3s;
+  min-width: 280px; /* Añadido para asegurar un ancho mínimo */
+  height: auto; /* Permitir que la altura se ajuste al contenido */
+  max-width: 100%; /* Asegurar que la tarjeta no exceda el ancho de su contenedor */
+  margin: 0 auto; /* Centrar las tarjetas */
 }
 
 .track-card:hover {
@@ -54,14 +95,15 @@ header {
 
 .track-card img {
   width: 100%;
-  height: 200px;
+  aspect-ratio: 1; /* Mantener proporción cuadrada */
   object-fit: cover;
   border-radius: 4px;
-  margin-bottom: 12px;
+  margin-bottom: 16px; /* Aumentado de 12px a 16px */
 }
 
 .track-info {
-  margin-top: 0.5rem;
+  flex: 1;
+  margin: 12px 0; /* Ajustado el margen */
 }
 
 .track-info h3 {
@@ -75,11 +117,43 @@ header {
   margin-bottom: 12px;
 }
 
+.track-card iframe {
+  width: 100% !important;
+  min-width: 250px; /* Ancho mínimo para el iframe */
+  margin-top: 12px;
+}
+
 .rightbar-container {
   width: 300px;
   padding: 20px;
   background: #121212;
   border-left: 1px solid #282828;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.3s ease;
+}
+
+.rightbar-container:hover {
+  scrollbar-color: #555555 #121212;
+}
+
+.rightbar-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.rightbar-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.rightbar-container::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.rightbar-container:hover::-webkit-scrollbar-thumb {
+  background-color: #555555;
 }
 
 footer {
