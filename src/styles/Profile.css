@@ -120,35 +120,3 @@ main {
 	gap: 0;
 	width: 100%;
 }
-
-/* Right sidebar container */
-.rightbar-container {
-	width: 30%;
-	background-color: #1c1c1c;
-	scrollbar-width: thin;
-	padding: 10px;
-	height: calc(100vh - 80px - 110px);
-	border-radius: 10px;
-	position: sticky;
-	top: 20px;
-	overflow-y: auto;
-	border-radius: 10px;
-}
-
-.rightbar-container::-webkit-scrollbar {
-    width: 8px;
-}
-
-.rightbar-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
-}
-
-.rightbar-container::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
-}
-
-.rightbar-container::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
