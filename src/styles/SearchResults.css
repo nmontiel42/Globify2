@@ -14,19 +14,23 @@ header {
 
 .search-results-container {
   flex: 1;
-  padding: 24px;
   margin-bottom: 90px; /* Espacio para el PlayBar */
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos se alineen verticalmente */
+  gap: 24px;
+  margin: 0 auto;
 }
 
 .search-results-container h2 {
   margin-bottom: 24px;
   font-size: 24px;
   color: white;
+  text-align: center; /* Centra el texto */
 }
 
 .results-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* Dos columnas iguales */
   gap: 24px;
   margin-top: 1rem;
 }

@@ -124,25 +124,15 @@ main {
 /* Right sidebar container */
 .rightbar-container {
 	width: 30%;
-	/* Ajusta el ancho del rightbar */
 	background-color: #1c1c1c;
 	scrollbar-width: thin;
 	padding: 10px;
-	/* Altura fija entre header y footer */
-	height: calc(100vh - 80px - 100px);
-	/* Calcula la altura restante */
+	height: calc(100vh - 80px - 110px);
 	border-radius: 10px;
 	position: sticky;
 	top: 20px;
 	overflow-y: auto;
-}
-
-.right-content {
-	display: flex;
-	gap: 20px;
-	width: 100%;
-	justify-content: flex-start;
-	/* Alinea el contenido a la izquierda dentro de este contenedor */
+	border-radius: 10px;
 }
 
 .rightbar-container::-webkit-scrollbar {
