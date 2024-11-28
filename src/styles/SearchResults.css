@@ -1,8 +1,6 @@
 .search-results-page {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(to bottom, #1a1a1a, #121212);
+  background: #121212;
   color: white;
 }
 
@@ -12,13 +10,21 @@ header {
   z-index: 1;
 }
 
-.search-results-container {
-  flex: 1;
-  margin-bottom: 90px; /* Espacio para el PlayBar */
+.main-container {
   display: flex;
-  flex-direction: column; /* Asegura que los elementos se alineen verticalmente */
-  gap: 24px;
-  margin: 0 auto;
+  height: calc(100vh - 160px);
+  overflow: hidden;
+}
+
+.search-results-container {
+  display: flex;
+  padding-left: 80px;
+  overflow-y: auto;
+  margin: 0 20px;
+  flex-direction: column;
+  align-content: stretch;
+  justify-content: space-evenly;
+  align-items: stretch;
 }
 
 .search-results-container h2 {
@@ -30,22 +36,20 @@ header {
 
 .results-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Dos columnas iguales */
-  gap: 24px;
-  margin-top: 1rem;
-  margin-bottom: 100px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
 .track-card {
-  background: #282828;
+  background: #181818;
   border-radius: 8px;
   padding: 16px;
-  cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .track-card:hover {
-  background: #2a2a2a;
+  background: #282828;
 }
 
 .track-card img {
@@ -69,6 +73,13 @@ header {
   font-size: 14px;
   color: #b3b3b3;
   margin-bottom: 12px;
+}
+
+.rightbar-container {
+  width: 300px;
+  padding: 20px;
+  background: #121212;
+  border-left: 1px solid #282828;
 }
 
 footer {

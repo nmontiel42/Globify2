@@ -1,14 +1,20 @@
-
 .track-page {
   min-height: 100vh;
   background: #121212;
   color: white;
 }
 
+.main-container {
+  display: flex;
+  height: calc(100vh - 160px);
+  overflow: hidden;
+}
+
 .track-container {
+  flex-grow: 1;
   padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  overflow-y: auto;
+  margin: 0 20px;
 }
 
 .track-detail {
@@ -16,6 +22,8 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .track-cover {
@@ -44,4 +52,11 @@
 .album {
   font-size: 1rem;
   color: #b3b3b3;
+}
+
+.rightbar-container {
+  width: 300px;
+  padding: 20px;
+  background: #121212;
+  border-left: 1px solid #282828;
 }
