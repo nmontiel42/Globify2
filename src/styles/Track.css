@@ -1,0 +1,47 @@
+
+.track-page {
+  min-height: 100vh;
+  background: #121212;
+  color: white;
+}
+
+.track-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.track-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.track-cover {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.track-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.track-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.artists {
+  font-size: 1.2rem;
+  color: #b3b3b3;
+  margin-bottom: 5px;
+}
+
+.album {
+  font-size: 1rem;
+  color: #b3b3b3;
+}

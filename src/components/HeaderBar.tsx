@@ -23,6 +23,20 @@ const HeaderBar: React.FC<HeaderBarProps> = ({ userProfile, onSongSelect, handle
   const [isInfoVisible, setInfoVisibility] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<any[]>([]);
+  const searchContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(event.target as Node)) {
+        setSearchResults([]);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   // Refs para detectar clics fuera del perfil
   const profileInfoRef = useRef<HTMLDivElement | null>(null);
@@ -123,7 +137,7 @@ const HeaderBar: React.FC<HeaderBarProps> = ({ userProfile, onSongSelect, handle
             />
           </button>  
 
-          <div className="search-bar">
+          <div className="search-bar" ref={searchContainerRef}>
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
@@ -138,7 +152,7 @@ const HeaderBar: React.FC<HeaderBarProps> = ({ userProfile, onSongSelect, handle
                   <div 
                     key={track.id} 
                     className="search-result-item"
-                    onClick={() => navigate(`/track/${track.id}`)}
+                    onClick={() => navigate(`/search?q=${encodeURIComponent(track.name)}`)}
                   >
                     <img src={track.album.images[2]?.url} alt={track.name} />
                     <div className="track-info">
