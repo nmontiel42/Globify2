@@ -112,11 +112,6 @@
   max-width: 160px;
 }
 
-/* Cuando la sidebar está expandida, aumentar el espacio entre los elementos */
-.sidebar.open .playlist-thumbnail {
-  margin-bottom: 20px;
-}
-
 .sidebar.open .playlist-title {
   display: block;
 
@@ -160,8 +155,6 @@ footer {
   font-size: 16px;
   color: white;
 }
-
-/* Eliminar todos los estilos individuales de scrollbar existentes para .sidebar, .sidebar.open, .sidebar.closed, .sidebar-content */
 
 /* Usar los mismos estilos globales definidos en Track.css */
 .sidebar,
