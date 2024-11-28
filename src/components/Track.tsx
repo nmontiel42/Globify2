@@ -91,9 +91,9 @@ const Track: React.FC = () => {
 
   return (
     <div className="track-page">
-      <HeaderBar 
+      <HeaderBar
         userProfile={userProfile}
-        onSongSelect={() => {}}
+        onSongSelect={() => { }}
         handleLogout={handleLogout}
       />
       <div className="main-container">

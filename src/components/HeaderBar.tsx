@@ -38,6 +38,9 @@ const HeaderBar: React.FC<HeaderBarProps> = ({ userProfile, onSongSelect, handle
     };
   }, []);
 
+  // Refs para detectar clics fuera del perfil
+  const profileInfoRef = useRef<HTMLDivElement | null>(null);
+
   const toggleInfoVisibility = () => {
     setInfoVisibility((prev) => !prev);
   };
@@ -78,6 +81,24 @@ const HeaderBar: React.FC<HeaderBarProps> = ({ userProfile, onSongSelect, handle
       navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
     }
   };
+
+  // Efecto para cerrar el perfil cuando se hace clic fuera de él
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      // Verifica si el clic está fuera del perfil
+      if (profileInfoRef.current && !profileInfoRef.current.contains(event.target as Node)) {
+        setInfoVisibility(false);
+      }
+    };
+
+    // Agregar evento para detectar clics fuera del perfil
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // Limpiar el evento cuando el componente se desmonte
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="header-bar">
@@ -147,7 +168,7 @@ const HeaderBar: React.FC<HeaderBarProps> = ({ userProfile, onSongSelect, handle
           </div>
         </div>
 
-        <div className="profile-info">
+        <div className="profile-info" ref={profileInfoRef}>
           <img
             src={userProfile.images[0]?.url || "placeholder.jpg"}
             alt="Foto de perfil"
