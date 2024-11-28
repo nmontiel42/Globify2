@@ -60,16 +60,16 @@ const Track: React.FC = () => {
 
   return (
     <div className="track-page">
-      <HeaderBar 
+      <HeaderBar
         userProfile={userProfile}
-        onSongSelect={() => {}}
+        onSongSelect={() => { }}
         handleLogout={handleLogout}
       />
       <main className="track-container">
         <div className="track-detail">
-          <img 
-            src={track.album.images[0]?.url} 
-            alt={track.name} 
+          <img
+            src={track.album.images[0]?.url}
+            alt={track.name}
             className="track-cover"
           />
           <div className="track-info">
@@ -80,6 +80,7 @@ const Track: React.FC = () => {
             <p className="album">{track.album.name}</p>
           </div>
           <iframe
+            title={`Reproduciendo: ${track.name} de ${track.artists.map((artist: any) => artist.name).join(', ')}`}
             style={{ borderRadius: '12px', marginTop: '20px' }}
             src={`https://open.spotify.com/embed/track/${track.id}`}
             width="100%"
