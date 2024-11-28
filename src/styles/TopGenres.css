@@ -1,0 +1,60 @@
+.top-genres {
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-left: 70px;
+    flex: 1;
+    width: 93%;
+}
+
+.genres-title {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.genres-list {
+    display: grid; /* Utilizamos grid para la distribución en filas y columnas */
+    grid-template-columns: repeat(4, 1fr); /* Dos elementos por fila */
+    gap: 20px; /* Espacio entre los elementos */
+    justify-items: center; /* Centra las tarjetas dentro de la celda */
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.genre-tag {
+    background-size: cover; /* Hace que la imagen se ajuste al tamaño del contenedor */
+    background-position: center; /* Asegura que la imagen esté centrada */
+    width: 100%; /* Se ajusta al 100% del contenedor */
+    height: 200px; /* Establece una altura fija para las tarjetas */
+    border-radius: 10px;
+    color: white;
+    font-size: 1.4rem; /* Ajusta el tamaño del texto */
+    font-weight: bold;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    overflow: hidden; /* Asegura que no se desborden las imágenes */
+}
+
+.genre-tag:hover {
+    background-color: rgba(0, 0, 0, 0.6); /* Añade un overlay oscuro al pasar el ratón */
+    transform: scale(1.05); /* Agranda ligeramente el elemento al pasar el ratón */
+}
+
+.genre-tag span {
+    color: white;
+    font-size: 1.4rem; /* Aumenta el tamaño del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añade sombra al texto para mejorar la visibilidad */
+}
+
+.no-genres {
+    text-align: center;
+    color: #888;
+    font-size: 1rem;
+}

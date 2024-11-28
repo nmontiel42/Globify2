@@ -1,22 +1,30 @@
-body, html {
+body,
+html {
 	height: 100%;
 	margin: 0;
 	display: flex;
-	flex-direction: column; /* Orden de los elementos: header, main, footer */
-  }
+	flex-direction: column;
+	/* Orden de los elementos: header, main, footer */
+}
 
-  main {
-	flex-grow: 1; /* Asegura que el contenido principal ocupe el espacio restante */
+main {
+	flex-grow: 1;
+	/* Asegura que el contenido principal ocupe el espacio restante */
 	padding: 20px;
 	border-radius: 6px;
-  }
+	display: flex;
+	/* Para organizar el contenido principal y la barra lateral en una fila */
+	justify-content: space-between;
+	/* Espacio entre la barra lateral y el contenido */
+}
 
-  .footer-index {
-	height: 100px; /* Asegura que el footer tenga un tamaño fijo */
+.footer-index {
+	height: 100px;
+	/* Asegura que el footer tenga un tamaño fijo */
 	width: 100%;
 	position: relative;
 	bottom: 0;
-  }
+}
 
 /* Contenedor de la cabecera donde está el logo de Spotify y la librería */
 .header-container {
@@ -24,14 +32,14 @@ body, html {
 	align-items: center;
 	gap: 10px;
 	margin-bottom: 20px;
-  }
-  
-  .spotify-logo {
+}
+
+.spotify-logo {
 	width: 40px;
 	height: 40px;
-  }
-  
-  .library-icon {
+}
+
+.library-icon {
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -39,65 +47,89 @@ body, html {
 	position: absolute;
 	top: 80px;
 	left: 10px;
-  }
-  
-  .library-icon h3 {
+}
+
+.library-icon h3 {
 	margin: 0;
 	font-size: 18px;
-	color: #1db954; /* Color verde de Spotify */
-  }
-  
-  .top-tracks-container {
+	color: #1db954;
+	/* Color verde de Spotify */
+}
+
+.top-tracks-container {
 	margin-top: 20px;
-  }
-  
-  /* Otros estilos para el contenido y las playlists */
-  .playlists-container {
+}
+
+/* Otros estilos para el contenido y las playlists */
+.playlists-container {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 10px;
-  }
-  
-  .playlist-thumbnail {
+}
+
+.playlist-thumbnail {
 	cursor: pointer;
-  }
-  
-  .playlist-thumbnail img {
+}
+
+.playlist-thumbnail img {
 	width: 60px;
 	height: 60px;
 	border-radius: 8px;
-  }
-  
-  .show-playlist {
+}
+
+.show-playlist {
 	display: flex;
 	align-items: center;
 	gap: 10px;
 	justify-content: center;
-  }
+}
 
-  .welcome-msg {
-	font-size: 24px;
-	margin-bottom: 20px;
+.welcome-container {
 	display: flex;
-	justify-content: center; /* Centrar el texto horizontalmente */
-	align-items: center; /* Centrar el texto verticalmente */
-	width: 100%; /* Asegurarse de que ocupe todo el ancho disponible */
-  }
+	justify-content: center;
+	align-items: center;
+	width: 107%;
+}
 
-  .profile-container {
-	height: 100vh;
-	flex: 1;
-  }
+.welcome-msg {
+	font-size: 2rem;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+}
+
+
+.profile-container {
+	display: flex;
+	align-items: flex-start;
+	/* Alinea los elementos en la parte superior */
+	width: 100%;
+	flex-direction: column;
+}
 
 .main-container {
 	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	width: 100%;
 }
 
 .rightbar-container {
 	width: 30%;
+	/* Ajusta el ancho del rightbar */
 	background-color: #1c1c1c;
 	padding: 10px;
 	border-radius: 10px;
+	position: sticky;
+	top: 20px;
+}
+
+.right-content {
+	display: flex;
+	gap: 20px;
+	width: 100%;
+	justify-content: flex-start;
+	/* Alinea el contenido a la izquierda dentro de este contenedor */
 }
 
 .barright {

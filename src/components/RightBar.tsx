@@ -7,12 +7,13 @@ interface RightBarProps {
 
 const RightBar: React.FC<RightBarProps> = ({ topTracks }) => {
 	return (
-		<div className='barright'>
+		<div className="barright">
 			<h3>Tus canciones más escuchadas</h3>
 			{topTracks.length > 0 ? (
 				topTracks.map((track) => (
 					<iframe
 						key={track.id}
+						title={`Reproductor de ${track.name}`} // Agregar un título único
 						style={{ borderRadius: '12px', marginBottom: '12px' }}
 						src={`https://open.spotify.com/embed/track/${track.id}`}
 						width="100%"
@@ -28,5 +29,6 @@ const RightBar: React.FC<RightBarProps> = ({ topTracks }) => {
 		</div>
 	);
 };
+
 
 export default RightBar;
