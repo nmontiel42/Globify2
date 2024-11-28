@@ -22,6 +22,7 @@ const RightBar: React.FC<RightBarProps> = ({ topTracks }) => {
               frameBorder="0"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
+              title={`Reproductor de la canción ${track.name} de ${track.artists.map((artist: any) => artist.name).join(', ')}`}
             ></iframe>
           ))}
         </div>
@@ -31,6 +32,5 @@ const RightBar: React.FC<RightBarProps> = ({ topTracks }) => {
     </div>
   );
 };
-
 
 export default RightBar;
