@@ -41,7 +41,7 @@ const UserProfile: React.FC = () => {
 					if (data.items.length > 0) {
 						const genres = data.items.flatMap((artist: any) => artist.genres);
 						console.log('Géneros obtenidos:', genres);
-						setTopGenres([...new Set(genres)] as string[]);
+						setTopGenres(Array.from(new Set<string>(genres)));
 	
 						// Obtener las imágenes de los artistas para cada género
 						const genreImagesData = data.items.map((artist: any) => {
